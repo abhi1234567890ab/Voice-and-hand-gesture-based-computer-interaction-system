@@ -1,23 +1,17 @@
 
-
-
-# Install the required libraries before running the code:
-# pip install SpeechRecognition pyttsx3
-
 import speech_recognition as sr
 import pyttsx3
 import os
 import subprocess
 
-# Initialize the text-to-speech engine
+
 engine = pyttsx3.init()
 
-# Function to convert text to speech
 def speak(text):
     engine.say(text)
     engine.runAndWait()
 
-# Function to recognize voice commands
+
 def listen_for_command():
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:
@@ -39,7 +33,7 @@ def listen_for_command():
         speak("Sorry, there was an error with the speech recognition service.")
         return ""
 
-# Function to execute system commands based on voice input
+
 def execute_command(command):
     if "open browser" in command:
         speak("Opening your default web browser.")
@@ -49,12 +43,11 @@ def execute_command(command):
         os.system("taskkill /im chrome.exe /f")
     elif "open music" in command:
         speak("Opening your music application.")
-        os.system("start MediaPlayer")  # Example for Windows Media Player
+        os.system("start MediaPlayer")  
     elif "shut down" in command:
         speak("Shutting down the system.")
-        os.system("shutdown /s /t 1")  # Windows shutdown commands
+        os.system("shutdown /s /t 1")  
     
-    # New commands
     elif "open setting" in command:
         speak("Opening settings.")
         os.system("start ms-settings:")
@@ -87,7 +80,6 @@ def execute_command(command):
     
     elif "exit" in command:
         speak("Exiting and going back to the last position.")
-        # This could be left as a placeholder for closing the script or application
     
     elif "open bluetooth setting" in command:
         speak("Opening Bluetooth settings.")
@@ -119,11 +111,11 @@ def execute_command(command):
     
     elif "slide next" in command:
         speak("Next slide.")
-        os.system("nircmd sendkeypress pagedown")  # Requires NirCmd for controlling PPT
+        os.system("nircmd sendkeypress pagedown") 
     
     elif "slide back" in command:
         speak("Previous slide.")
-        os.system("nircmd sendkeypress pageup")  # Requires NirCmd for controlling PPT
+        os.system("nircmd sendkeypress pageup") 
     
     elif "battery status" in command:
         speak("Showing battery status.")
@@ -136,7 +128,7 @@ def execute_command(command):
     else:
         speak("I did not recognize that command. Please try again.")
 
-# Main loop to keep listening for commands
+
 if __name__ == "__main__":
     while True:
         command = listen_for_command()

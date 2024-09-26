@@ -243,6 +243,17 @@ def respond(voice_data):
     elif ('bye' in voice_data) or ('by' in voice_data):
         reply("Good bye Sir! Have a nice day.")
         is_awake = False
+    
+    elif 'launch hand gesture' in voice_data:
+        reply("Launching hand gesture recognition.")
+        gesture_file_path = "hand.py"  # Replace with the actual path to the Python file
+        os.system(f"python {gesture_file_path}")
+
+    elif 'terminate hand gesture' in voice_data:
+       reply("Stopping hand gesture recognition.")
+       os.system("taskkill /im python.exe /f")  # This will forcefully stop any Python process
+
+
 
     elif ('exit' in voice_data) or ('terminate' in voice_data):
         if Gesture_Controller.GestureController.gc_mode:

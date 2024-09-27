@@ -130,12 +130,12 @@ while cap.isOpened():
                 current_time = time.time()
                 if current_time - last_volume_change_time > volume_change_speed:
                     if fingers_up[0] and not any(fingers_up[1:]):  # Only thumb is up
-                        pyautogui.press("volumeup")
-                        cv2.putText(frame, 'Volume Up (Thumbs Up)', (50, 100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+                        pyautogui.press("volumedown")
+                        cv2.putText(frame, 'Volume down (Thumbs down)', (50, 100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
                         last_volume_change_time = current_time
                     elif not fingers_up[0] and all(fingers_up[1:]):  # Only thumb is down
-                        pyautogui.press("volumedown")
-                        cv2.putText(frame, 'Volume Down (Thumbs Down)', (50, 100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+                        pyautogui.press("volumeup")
+                        cv2.putText(frame, 'Volume (Thumbs up)', (50, 100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
                         last_volume_change_time = current_time
 
                 # 5-finger gesture to run the Python script

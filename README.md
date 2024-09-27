@@ -3,8 +3,24 @@ Voice and Hand Gesture-Based Interaction System in Python uses OpenCV, Mediapipe
 <br>
 
 Requirement Libraries:
-pip install PyAudio
+pip install tkinter
+pip install subprocess
+pip install playsound
+pip install pyttsx3
 pip install SpeechRecognition
+pip install datetime
+pip install pynput
+pip install pyautogui
+pip install sys
+pip install smtplib
+pip install wikipedia
+pip install app
+pip install threading
+pip install opencv-python
+pip install mediapipe
+pip install eel
+
+
 
 <-- Here is a list of all voice commands from the provided code -->
 

@@ -6,6 +6,53 @@ Requirement Libraries:
 pip install PyAudio
 pip install SpeechRecognition
 
+<-- Here is a list of all voice commands from the provided code -->
+
+"wake up"
+"hello"
+"what is your name"
+"date"
+"time"
+"open browser"
+"close browser"
+"open music"
+"shut down"
+"open setting"
+"close setting"
+"minimise"
+"maximize"
+"open start menu"
+"close start menu"
+"close all applications"
+"open device manager"
+"close current tab"
+"open wi-fi setting"
+"close application"
+"open bluetooth setting"
+"open microsoft store"
+"return to desktop"
+"open file explorer"
+"open this pc"
+"open camera"
+"open downloads"
+"slide next"
+"slide back"
+"battery status"
+"open control panel"
+"stop"
+"search" (followed by search query)
+"location"
+"bye"
+"exit"
+"terminate"
+"launch gesture recognition"
+"stop gesture recognition"
+"copy"
+"page", "pest", or "paste"
+"list"
+"open" (while navigating files)
+"back" (while navigating files)
+
 
 1. Home page
    

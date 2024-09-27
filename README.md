@@ -6,4 +6,5 @@ Requirement Libraries:
 pip install PyAudio
 pip install SpeechRecognition
 
-https://github.com/user-attachments/assets/45b5a940-3a11-4974-b756-42b4e949a0a8
+
+![thum up](https://github.com/user-attachments/assets/508879aa-df78-493e-8623-be1188fd0de2)

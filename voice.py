@@ -12,7 +12,7 @@ from os import listdir
 from os.path import isfile, join
 import smtplib
 import wikipedia
-import app  # or wherever ChatBot is defined
+import app 
 from threading import Thread
 
 #import Gesture_Controller_Gloved as Gesture_Controller

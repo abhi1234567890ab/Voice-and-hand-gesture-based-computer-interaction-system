@@ -19,6 +19,7 @@ pip install threading
 pip install opencv-python
 pip install mediapipe
 pip install eel
+pip install pygame
 
 
 

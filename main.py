@@ -1,13 +1,17 @@
 import tkinter as tk
 import subprocess
 import os
-from playsound import playsound  # Import the playsound library
+import pygame  # Import pygame for audio playback
+import threading  # For playing sound in a separate thread
 
 class GestureControlApp:
     def __init__(self, master):
         self.master = master
         self.master.title("Hand Gesture Control")
         
+        # Initialize Pygame mixer
+        pygame.mixer.init()
+
         # Set the window size (width x height)
         self.master.geometry("400x400")  # Example: 400 width, 400 height
 
@@ -49,9 +53,23 @@ class GestureControlApp:
         self.is_running = False
         self.voice_is_running = False
 
+        # Automatically get the current directory and locate the mp3 file
+        self.mp3_file = os.path.join(os.path.dirname(__file__), 'starting.mp3')
+
+    def play_sound(self, sound_file):
+        try:
+            # Load the sound
+            pygame.mixer.music.load(sound_file)
+            pygame.mixer.music.play()
+            while pygame.mixer.music.get_busy():  # Wait for music to finish playing
+                continue
+        except Exception as e:
+            print(f"Error playing sound: {e}")
+
     def start_gesture_control(self):
         if not self.is_running:
-            playsound('starting.mp3')  # Play audio when starting
+            sound_thread = threading.Thread(target=self.play_sound, args=(self.mp3_file,))
+            sound_thread.start()
             self.process = subprocess.Popen(['python', 'hand.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             self.is_running = True
             self.start_button.config(state=tk.DISABLED)  # Disable start button
@@ -66,7 +84,8 @@ class GestureControlApp:
 
     def start_voice_assistance(self):
         if not self.voice_is_running:
-            playsound('starting.mp3')  # Play audio when starting voice assistance
+            sound_thread = threading.Thread(target=self.play_sound, args=(self.mp3_file,))
+            sound_thread.start()
             self.voice_process = subprocess.Popen(['python', 'Voice.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             self.voice_is_running = True
             self.voice_start_button.config(state=tk.DISABLED)  # Disable start button

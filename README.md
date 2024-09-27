@@ -8,6 +8,7 @@ pip install SpeechRecognition
 
 
 1. Home page
+   
 ![WhatsApp Image 2024-09-27 at 12 24 43_d8c95248](https://github.com/user-attachments/assets/26d40d58-ab04-4f67-99ad-6ed6179a28be)
 
 3. Running Hand gesture (Scrolling down)

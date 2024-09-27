@@ -135,7 +135,7 @@ while cap.isOpened():
                         last_volume_change_time = current_time
                     elif not fingers_up[0] and all(fingers_up[1:]):  # Only thumb is down
                         pyautogui.press("volumeup")
-                        cv2.putText(frame, 'Volume (Thumbs up)', (50, 100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+                        cv2.putText(frame, 'Volume up (Thumbs up)', (50, 100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
                         last_volume_change_time = current_time
 
                 # 5-finger gesture to run the Python script
